@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a class="action" href="{{ url_for('quotes.register') }}">New</a>
+
+  {% for post in posts %}
+    <article class="post">
+      <header>
+        <div>
+          <h1>{{ post['name'] }}</h1>
+        </div>
+      </header>
+      <p class="body">{{ post['quote'] }}</p>
+        <p class="body" id="image" content="{{ post['image'] }}" onclick="">{{ post['image'] }}</p>
+    </article>
+
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+Enter name and surname of a famous programmer:
+  <form method="post">
+    <label for="name">Name</label>
+    <input name="name" id="name" required>
+    <input type="submit" value="Register">
+  </form>
+Or get a random quote:
+<a class="action" href="{{ url_for('quotes.random') }}">New</a>
+{% endblock %}
